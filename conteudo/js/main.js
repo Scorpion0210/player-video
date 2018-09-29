@@ -1,7 +1,7 @@
 var vid = document.getElementById('video-player');
 
 vid.onseeked = function() {
-    console.log("avancei ou retrocedi o video com o mouse");
+    // console.log("avancei ou retrocedi o video com o mouse");
 };
 
 vid.onplay = function() {
@@ -9,12 +9,12 @@ vid.onplay = function() {
 };
 
 vid.onpause = function() {
-  console.log("PAUSE");
+  // console.log("PAUSE");
 };
 
 vid.onended = function() {
   setLessonStatus("completed");
-  console.log("lesson_status = completed");
+  // console.log("lesson_status = completed");
 };
 
 vid.ontimeupdate = function() {
@@ -23,7 +23,7 @@ vid.ontimeupdate = function() {
   var perc = Math.floor(vid.currentTime) /  Math.floor(vid.duration) * 100;
   var location = vid.currentTime;
   grava(perc, location);
-  console.log(perc);
+  // console.log(perc);
 };
 
 function grava(p, l) {

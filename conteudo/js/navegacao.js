@@ -1,6 +1,6 @@
 var lms = false;
 var loc = 0;
-var scorm;
+var scorm = null;
 
 function inicia() {
 	lms = pipwerks.SCORM.init() ? true : false;
@@ -16,8 +16,7 @@ function inicia() {
 
     // faz o video retornar de onde parou
     if (getLocation() > 1) {
-        vid.currentTime = loc;
-        vid.play();
+      vid.currentTime = loc;
     }
 
 		//Verifica se conexao com LMS ainda esta ativa
@@ -35,7 +34,7 @@ function inicia() {
 }
 
 function setScore(score) {
-    scorm.data.set("cmi.core.score.raw", score.toString());
+  scorm.data.set("cmi.core.score.raw", score.toString());
 }
 
 function setLocation(location) {
