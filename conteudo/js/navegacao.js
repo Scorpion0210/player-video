@@ -3,8 +3,8 @@ var lms = true;
 if (lms)
 {
 	//Atribui o objeto pipwerks.SCORM na variavel scorm
-	var scorm = pipwerks.SCORM,
-		trace = pipwerks.UTILS.trace;
+	var scorm = pipwerks.SCORM;
+	var trace = pipwerks.UTILS.trace;
 	//DefiniÃ§Ã£o da versÃ£o do SCORM utilizada
 	scorm.version = "1.2";
 	//Inicia a conexÃ£o com o SCORM
