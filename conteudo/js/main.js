@@ -1,33 +1,33 @@
 var vid = document.getElementById('video-player');
-console.log(vid);
 
 vid.onseeked = function() {
-    console.log("avancei ou retrocedi o video com o mouse");
+    // console.log("avancei ou retrocedi o video com o mouse");
 };
 
 vid.onplay = function() {
-  console.log("PLAY");
+  inicia();
 };
 
 vid.onpause = function() {
-  console.log("PAUSE");
+  // console.log("PAUSE");
 };
 
 vid.onended = function() {
-  console.log("FIM");
+  setLessonStatus("completed");
+  // console.log("lesson_status = completed");
 };
 
 vid.ontimeupdate = function() {
   // Math.floor(20.5) => 20
   // arredonda o numero para baixo
   var perc = Math.floor(vid.currentTime) /  Math.floor(vid.duration) * 100;
-  console.log(perc);
+  var location = vid.currentTime;
+  grava(perc, location);
+  // console.log(perc);
 };
 
-function setScore() {
-
-}
-
-function setLocation() {
-
+function grava(p, l) {
+  setScore(p);
+  setLocation(l);
+  saveScorm();
 }
