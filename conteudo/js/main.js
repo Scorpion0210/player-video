@@ -1,7 +1,7 @@
 var vid = document.getElementById('video-player');
 
 vid.onseeked = function() {
-    // console.log("avancei ou retrocedi o video com o mouse");
+  // console.log("avancei ou retrocedi o video com o mouse");
 };
 
 vid.onplay = function() {

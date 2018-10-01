@@ -47,15 +47,14 @@ function getLocation() {
 }
 
 function setLessonStatus(status) {
-  scorm.data.set("cmi.core.lesson_status", status);
+  scorm.data.set("cmi.core.lesson_status", status.toString());
 }
 
 function saveScorm() {
   scorm.save();
 }
 
-function fecharJanela()
-{
+function fecharJanela() {
 	var ua = window.navigator.userAgent;
 	var msie = ua.indexOf("MSIE");
 
