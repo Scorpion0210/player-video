@@ -5,53 +5,56 @@ var scorm = null;
 function inicia() {
 	lms = pipwerks.SCORM.init() ? true : false;
 
-	if (this.lms) {
-    console.log("API SCORM ON");
+	if (lms) {
+    	console.log("API SCORM ON");
 		//Atribui o objeto pipwerks.SCORM na variavel scorm
 		scorm = pipwerks.SCORM;
 		//Definicao da versao do SCORM utilizada
 		scorm.version = "1.2";
-    scorm.data.set("cmi.core.score.min", "0");
-    scorm.data.set("cmi.core.score.max", "100");
+	    scorm.data.set("cmi.core.score.min", "0");
+	    scorm.data.set("cmi.core.score.max", "100");
 
-    // faz o video retornar de onde parou
-    if (getLocation() > 1) {
-      vid.currentTime = loc;
-    }
+	    // faz o video retornar de onde parou
+	    if (getLocation() > 1) {
+	      vid.currentTime = loc;
+	    }
 
 		//Verifica se conexao com LMS ainda esta ativa
-		window.onunload = window.onbeforeunload = function()
-		{
-			if (scorm.connection.isActive) {
+		window.onunload = window.onbeforeunload = function() {
+			if (lms) {
 				console.log("Finalizando conexao no Unload");
-				scorm.save();
-        fecharJanela();
+				saveScorm();
+        		fecharJanela();
 			}
 		}
 	} else {
-    console.log("API SCORM OFF");
-  }
+    	console.log("API SCORM OFF");
+  	}
 }
 
 function setScore(score) {
-  scorm.data.set("cmi.core.score.raw", score.toString());
+	console.log("cmi.core.score.raw | value: " + score);
+	scorm.data.set("cmi.core.score.raw", score.toString());
 }
 
 function setLocation(location) {
-  scorm.data.set("cmi.core.lesson_location", location.toString());
+	console.log("cmi.core.lesson_location | value: " + location);
+	scorm.data.set("cmi.core.lesson_location", location.toString());
 }
 
 function getLocation() {
-  loc = scorm.data.get('cmi.core.lesson_location');
-  return parseInt(loc);
+	loc = scorm.data.get('cmi.core.lesson_location');
+	return parseInt(loc);
 }
 
 function setLessonStatus(status) {
-  scorm.data.set("cmi.core.lesson_status", status.toString());
+	scorm.data.set("cmi.core.lesson_status", status.toString());
+	saveScorm();
 }
 
 function saveScorm() {
-  scorm.save();
+	console.log("salvando");
+	scorm.save();
 }
 
 function fecharJanela() {
