@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <manifest identifier="RusticiSoftwareSCORMDriverTemplate" version="1"
        xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2"
        xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2"
@@ -11,18 +11,20 @@
 		<schemaversion>1.2</schemaversion>
 		<adlcp:location>metadata.xml</adlcp:location>
 	</metadata>
-	<organizations default="CURSO_01">
-		<organization identifier="CURSO_01">
-			<title>Infográfico Conta Digital</title>
+	<organizations default="CONTEUDO_01">
+		<organization identifier="CONTEUDO_01">
+			<title>Video SCORM</title>
 			<item identifier="ITEM_01" identifierref="RES_01" isvisible="true">
-				<title>Infográfico Conta Digital</title>
+				<title>Video SCORM</title>
 			</item>
 		</organization>
 	</organizations>
 	<resources>
-		<resource identifier="RES_01" type="webcontent" adlcp:scormtype="sco" href="index.html">
-			<file href="biblioteca/css/estilos.css" />
-			<file href="biblioteca/js/SCORM_API_wrapper.js" />
+		<resource identifier="RES_01" type="webcontent" adlcp:scormtype="sco" href="conteudo/index.html">
+			<file href="css/estilo.css" />
+			<file href="js/html5shiv.js" />
+      <file href="js/navegacao.js" />
+      <file href="js/SCORM_API_wrapper.js" />
 		</resource>
 	</resources>
 </manifest>

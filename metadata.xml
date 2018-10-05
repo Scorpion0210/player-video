@@ -7,7 +7,7 @@
 
     <general>
         <title>
-            <langstring>Infográfico</langstring>
+            <langstring>Video SCORM</langstring>
         </title>
         <!-- Repace "1" with Manifest->Course.Identifier field value. If no value specifed, use a GUID or use leave it as "1".-->
         <catalogentry>
